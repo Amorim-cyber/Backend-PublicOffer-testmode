@@ -26,6 +26,10 @@ Ao efetuar a reserva, C notifica A ou B, que por sua vez avisa o cliente.
 
 Este será o modelo que vamos tentar aplicar no projeto.
 
+#### INSTRUÇÕES
+
+**Link heroku:** https://public-offer-back-test.herokuapp.com/ 
+
 #### TECHS UTILIZADAS
 
 * Java 8
@@ -44,5 +48,11 @@ Vai ser aqui que vou contar com mais detalhes os commits do projeto.
     </ul>
     <br>
 </div>
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>CRIANDO UM METODO POST</strong></p>
+    <ul>
+        <li><strong>PARTE 2:</strong> Criamos um método POST em nosso controller, também foi criado um service e repositório para a entidade Request</li>
+    </ul>
+    <br>
+</div>
 
- 
