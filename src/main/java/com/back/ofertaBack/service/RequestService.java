@@ -8,6 +8,9 @@ import com.back.ofertaBack.repository.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class RequestService {
 
@@ -31,4 +34,10 @@ public class RequestService {
                 .build();
     }
 
+    public List<RequestDTO> listAll() {
+        List<Request> allRequests = requestRepository.findAll();
+        return allRequests.stream()
+                .map(requestMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 }

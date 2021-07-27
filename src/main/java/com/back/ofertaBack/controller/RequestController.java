@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/ofertaPublica/back")
@@ -23,5 +24,10 @@ public class RequestController {
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO createRequest(@RequestBody @Valid RequestDTO requestDTO){
         return requestService.createRequest(requestDTO);
+    }
+
+    @GetMapping
+    public List<RequestDTO> listAll(){
+        return requestService.listAll();
     }
 }

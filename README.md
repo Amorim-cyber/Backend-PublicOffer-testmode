@@ -12,7 +12,7 @@ Portanto, a motivação desse projeto é criar um controle de reservas para IPOs
 
 #### Modelo de negócios
 
-Aqui no nosso projeto vamos entrar na pele de uma institução financeira que comprou as ações de uma empresa fictícia chamada *Grupo XPTO Logistica*. Ela irá fazer a sua oferta pública para o mercado.
+Aqui no nosso projeto vamos entrar na pele de uma institução financeira que comprou as ações de uma empresa fictícia chamada *Grupo XPTO Logística*. Ela irá fazer a sua oferta pública para o mercado.
 
 Vamos supor que nossa instituição domine esse mercado.
 
@@ -63,3 +63,10 @@ Vai ser aqui que vou contar com mais detalhes os commits do projeto.
     <br>
 </div>
 
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>CRIANDO UM METODO GET</strong></p>
+    <ul>
+        <li><strong>PARTE 4:</strong> Editamos os arquivos de controller e service para receber o metodo listAll() que retorna o registro de todas as requests</li>
+    </ul>
+    <br>
+</div>
