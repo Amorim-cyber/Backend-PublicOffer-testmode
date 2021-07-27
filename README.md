@@ -55,4 +55,11 @@ Vai ser aqui que vou contar com mais detalhes os commits do projeto.
     </ul>
     <br>
 </div>
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>APRIMORANDO O METODO POST</strong></p>
+    <ul>
+        <li><strong>PARTE 3:</strong> Criamos uma classe DTO para nossa entidade Request, adicionamos nas dependências o conversor mapstruct</li>
+    </ul>
+    <br>
+</div>
 
