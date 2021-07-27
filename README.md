@@ -70,3 +70,12 @@ Vai ser aqui que vou contar com mais detalhes os commits do projeto.
     </ul>
     <br>
 </div>
+
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>ADICIONANDO OUTROS METODOS GET</strong></p>
+    <ul>
+        <li><strong>PARTE 5:</strong> Editamos os arquivos de controller, service e repository para receber o metodo findAllByAgentId() que filtra os requests por id de agente e o metodo findAllByClientId() que filtra os requests por id de cliente</li>
+    </ul>
+    <br>
+</div>
+
