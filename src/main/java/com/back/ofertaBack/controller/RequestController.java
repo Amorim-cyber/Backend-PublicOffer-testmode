@@ -28,6 +28,12 @@ public class RequestController {
         return requestService.createRequest(requestDTO);
     }
 
+    @PutMapping(value="/{id}")
+    public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid RequestDTO requestDTO)
+            throws RequestNotFoundException {
+        return requestService.updateById(id,requestDTO);
+    }
+
     @GetMapping
     public List<RequestDTO> listAll(){
         return requestService.listAll();

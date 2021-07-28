@@ -29,10 +29,17 @@ public class RequestService {
         Request requestToSave = requestMapper.toModel(requestDTO);
 
         Request savedRequest = requestRepository.save(requestToSave);
-        return MessageResponseDTO
-                .builder()
-                .message("Created request with ID "+ savedRequest.getId())
-                .build();
+        return getMessageResponseDTO(savedRequest.getId(),"Created");
+    }
+
+    public MessageResponseDTO updateById(Long id, RequestDTO requestDTO) throws RequestNotFoundException {
+
+        verifyIfRequestExists(id);
+
+        Request requestToUpdate= requestMapper.toModel(requestDTO);
+
+        Request updatedRequest = requestRepository.save(requestToUpdate);
+        return getMessageResponseDTO(updatedRequest.getId(),"Updated");
     }
 
     public List<RequestDTO> listAll() {
@@ -51,8 +58,19 @@ public class RequestService {
     }
 
     public void delete(Long id) throws RequestNotFoundException {
-        requestRepository.findById(id).orElseThrow(() -> new RequestNotFoundException(id));
+        verifyIfRequestExists(id);
         requestRepository.deleteById(id);
+    }
+
+    private MessageResponseDTO getMessageResponseDTO(Long id, String message ) {
+        return MessageResponseDTO
+                .builder()
+                .message(message+" request with ID " + id)
+                .build();
+    }
+
+    private Request verifyIfRequestExists(Long id) throws RequestNotFoundException {
+        return requestRepository.findById(id).orElseThrow(() -> new RequestNotFoundException(id));
     }
 
     private List<RequestDTO> getListDTO(List<Request> list){
@@ -60,4 +78,6 @@ public class RequestService {
                 .map(requestMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
+
 }

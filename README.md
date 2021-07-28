@@ -1,6 +1,6 @@
 # Backend-PublicOffer-testmode :left_luggage:
 
-#### Inicio
+### Início
 
 <hr>
 
@@ -12,7 +12,7 @@ Sendo bem breve IPO (*Initial Public Offering*)  é um tipo de oferta pública n
 
 Portanto, a motivação desse projeto é criar um controle de reservas para IPOs.
 
-#### Modelo de negócios
+### Modelo de negócios
 
 <hr>
 
@@ -30,20 +30,98 @@ Ao efetuar a reserva, C notifica A ou B, que por sua vez avisa o cliente.
 
 Este será o modelo que vamos tentar aplicar no projeto.
 
-#### INSTRUÇÕES
+### TECHS UTILIZADAS
 
 <hr>
-
-**Link heroku:** https://public-offer-back-test.herokuapp.com/ 
-
-#### TECHS UTILIZADAS
 
 * Java 8
 * Spring
 * IDE IntelliJ (ou outra opção se preferir)
-* heroku para cloud
+* heroku para cloud (https://public-offer-back-test.herokuapp.com/)
 
-#### TRILHA
+### INSTRUÇÕES
+
+<hr>
+
+Para rodar o projeto localmente em sua maquina siga os seguintes passos:
+
+1. Baixe os arquivos deste repositório
+
+2. Utilize o intelliJ para abrir o diretório que contém os arquivos baixados
+
+3. Inicie o servidor. Em caso de dúvida siga os seguintes subpassos:
+
+   * Abra o arquivo OfertaBackApplication
+   * Clique na seta verde indicada pelo circulo vermelho
+
+   <img src="img\passo1.png" style="border: solid grey; border-radius:4px"></img>
+
+4. Para realizar os teste dos comandos HTTP utilizei a documentação do Swagger, para acessa-la digite `http://localhost:8082/swagger-ui.html` no seu navegador. **IMPORTANTE: A página só irá funcionar quando o servidor estiver de pé. **
+
+#### PRONTO
+
+A página está pronta para uso.
+
+<img src="img\fim.PNG" style="border: solid grey; border-radius:4px"></img>
+
+#### OBS:
+
+Você também pode testar a aplicação trocando o endereço local pelo endereço do servidor cloud digitando `https://public-offer-back-test.herokuapp.com/swagger-ui.html` no seu navegador.
+
+Acessando `http://localhost:8082/h2-console` você pode acessar a database da aplicação. É necessário a JDBC URL para logar apenas. Essa informação é dada no log de inicialização. 
+
+<img src="img\log.PNG" style="border: solid grey; border-radius:4px"></img>
+
+#### EXEMPLO DE DADOS PARA TESTES
+
+Vou deixar aqui os exemplos que utilizei no desenvolvimento.
+
+```shell script
+[
+  {
+    "id": 1,
+    "agentId": 11111,
+    "clientId": 30,
+    "assetName": "IPO 1",
+    "assetPrice": "R$ 30,00",
+    "amount": "R$ 100,00",
+    "status": "Feito",
+    "description": null
+  },
+  {
+    "id": 2,
+    "agentId": 22222,
+    "clientId": 34,
+    "assetName": "IPO 2",
+    "assetPrice": "R$ 40,00",
+    "amount": "R$ 100,00",
+    "status": "Feito",
+    "description": null
+  },
+  {
+    "id": 3,
+    "agentId": 22222,
+    "clientId": 341,
+    "assetName": "IPO 1",
+    "assetPrice": "R$ 40,00",
+    "amount": "R$ 100,00",
+    "status": "Feito",
+    "description": null
+  },
+  {
+    "id": 4,
+    "agentId": 11111,
+    "clientId": 76,
+    "assetName": "IPO 1",
+    "assetPrice": "R$ 40,00",
+    "amount": "R$ 500,00",
+    "status": null,
+    "description": null
+  }
+]
+```
+
+### TRILHA
 
 <hr>
 
@@ -94,4 +172,16 @@ Vou deixar aqui notas com mais detalhes de cada commit do projeto.
     </ul>
     <br>
 </div>
+
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>CRIANDO UM METODO PUT</strong></p>
+    <ul>
+        <li><strong>PARTE 7:</strong> Editamos os arquivos de controller e service para receber o metodo updateById, que altualiza os dados de um determinado request</li>
+    </ul>
+    <br>
+</div>
+
+FIM DA TRILHA
+
+### Forte abraço! :smile:
 
