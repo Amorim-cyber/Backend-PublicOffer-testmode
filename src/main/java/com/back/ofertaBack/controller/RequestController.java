@@ -3,6 +3,7 @@ package com.back.ofertaBack.controller;
 import com.back.ofertaBack.dto.request.RequestDTO;
 import com.back.ofertaBack.dto.response.MessageResponseDTO;
 import com.back.ofertaBack.entity.Request;
+import com.back.ofertaBack.exception.RequestNotFoundException;
 import com.back.ofertaBack.service.RequestService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,5 +41,11 @@ public class RequestController {
     @GetMapping(value="/localizar/{clientId}")
     public ResponseEntity<List<RequestDTO>> findAllByClientId(@PathVariable Long clientId){
         return ResponseEntity.ok(requestService.findAllByClientId(clientId));
+    }
+
+    @DeleteMapping(value="/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@PathVariable Long id) throws RequestNotFoundException {
+        requestService.delete(id);
     }
 }

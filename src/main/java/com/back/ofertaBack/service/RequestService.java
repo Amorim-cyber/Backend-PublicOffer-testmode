@@ -3,15 +3,13 @@ package com.back.ofertaBack.service;
 import com.back.ofertaBack.dto.request.RequestDTO;
 import com.back.ofertaBack.dto.response.MessageResponseDTO;
 import com.back.ofertaBack.entity.Request;
+import com.back.ofertaBack.exception.RequestNotFoundException;
 import com.back.ofertaBack.mapper.RequestMapper;
 import com.back.ofertaBack.repository.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,21 +37,26 @@ public class RequestService {
 
     public List<RequestDTO> listAll() {
         List<Request> allRequests = requestRepository.findAll();
-        return allRequests.stream()
-                .map(requestMapper::toDTO)
-                .collect(Collectors.toList());
+        return getListDTO(allRequests);
     }
 
     public List<RequestDTO> findAllByAgentId(Long agentId) {
         List<Request> allAgentRequests = requestRepository.findByAgentId(agentId);
-        return allAgentRequests.stream()
-                .map(requestMapper::toDTO)
-                .collect(Collectors.toList());
+        return getListDTO(allAgentRequests);
     }
 
     public List<RequestDTO> findAllByClientId(Long clientId) {
-        List<Request> allAgentRequests = requestRepository.findByClientId(clientId);
-        return allAgentRequests.stream()
+        List<Request> allClientRequests = requestRepository.findByClientId(clientId);
+        return getListDTO(allClientRequests);
+    }
+
+    public void delete(Long id) throws RequestNotFoundException {
+        requestRepository.findById(id).orElseThrow(() -> new RequestNotFoundException(id));
+        requestRepository.deleteById(id);
+    }
+
+    private List<RequestDTO> getListDTO(List<Request> list){
+        return list.stream()
                 .map(requestMapper::toDTO)
                 .collect(Collectors.toList());
     }
