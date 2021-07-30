@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ofertaPublica/back")
+@RequestMapping("/api/ofertaPublica/back")
 public class RequestController {
 
     private RequestService requestService;
