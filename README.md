@@ -180,6 +180,15 @@ Vou deixar aqui notas com mais detalhes de cada commit do projeto.
     </ul>
     <br>
 </div>
+<div style="background-color: #E8E8E8; border-radius: 3px;">
+   <p><strong>REFORMULANDO AS ESTRUTURAS</strong></p>
+    <ul>
+        <li><strong>PARTE 8:</strong> Fiz uma mudança geral em todas as classes </li>
+    </ul>
+    <br>
+</div>
+
+
 
 FIM DA TRILHA
 
