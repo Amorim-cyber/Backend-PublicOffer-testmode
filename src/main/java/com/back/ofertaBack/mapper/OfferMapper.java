@@ -16,7 +16,7 @@ public class OfferMapper {
         offer.setOfferName(dto.getOfferName());
         offer.setClientCode(dto.getClientCode());
         offer.setClientName(dto.getClientName());
-        offer.setBound(dto.isBound());
+        offer.setBound(dto.getBound());
         offer.setClientEmail(dto.getClientEmail());
         offer.setAgentEmail(dto.getAgentEmail());
         offer.setAmount(dto.getAmount());

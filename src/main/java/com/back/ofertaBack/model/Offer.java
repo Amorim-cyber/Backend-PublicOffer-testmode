@@ -18,7 +18,7 @@ public class Offer {
     private String clientName;
 
     @Column(name = "bound")
-    private boolean bound;
+    private String bound;
 
     @Column(name = "offer_name")
     private String offerName;
@@ -62,11 +62,11 @@ public class Offer {
         this.clientName = clientName;
     }
 
-    public boolean isBound() {
+    public String getBound() {
         return bound;
     }
 
-    public void setBound(boolean bound) {
+    public void setBound(String bound) {
         this.bound = bound;
     }
 

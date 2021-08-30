@@ -15,7 +15,7 @@ public class OfferDTO {
     private String clientName;
 
     @NotNull
-    private boolean bound;
+    private String bound;
 
     @NotNull
     private String offerName;
@@ -62,11 +62,11 @@ public class OfferDTO {
         this.clientName = clientName;
     }
 
-    public boolean isBound() {
+    public String getBound() {
         return bound;
     }
 
-    public void setBound(boolean bound) {
+    public void setBound(String bound) {
         this.bound = bound;
     }
 
